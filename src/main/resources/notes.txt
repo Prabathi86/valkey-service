@@ -1,0 +1,11 @@
+#deployment
+oc apply -f valkey-deployment.yaml
+oc apply -f valkey-service.yaml
+
+oc get svc
+oc get pods
+
+valkey-cli ping
+
+#Consumer app connectivity
+nc -zv valkey-service 6379
